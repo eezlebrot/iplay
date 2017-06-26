@@ -1,0 +1,56 @@
+{%load static %}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="{% static 'todo/style.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+  $(function () {
+    $("#datepicker").datepicker();
+  })
+</script>
+
+<form action="{% url 'todo:tasklist_update' %}" method="post">
+
+<div id='iPlay'>
+
+  <h1>iPlay Extra Credit</h1>
+
+  {% csrf_token %}
+
+  {% if all_tasks %}
+    <div class='task-header'>
+      <div id='task-description-hdr'>Task</div><div id='task-due-hdr'>Due</div><div id='task-complete-hdr'>Done?</div>
+    </div>
+    {# <ul> #}
+    {% for t in all_tasks %}
+      <div class='task-row'>
+        <div class='task-item' id='task-description'>{{t.description}}</div><div class='task-item' id='task-due'>{{t.due_by}}</div><div class='task-item' id='task-complete'><input type="submit" name="remove_{{t.id}}" value="Done!"></div>
+      </div>  
+      {# <li>{{t.description}} DUE: {{t.due_by}} </li> #}
+    {% endfor %}
+  {% else %}
+    <p>No Tasks Found!</p>
+  {% endif %}
+</div>
+
+<div id='add-task-box'>
+  <h3>Add Task</h3>
+  <div id="left-column">
+    <div>
+      <div class="form-title">Description:</div> 
+      <input type="text" name="description"/>
+    </div>
+    <div>
+      <div class="form-title">Due:</div>
+      <input type="text" id="datepicker" name="due_by">
+    </div>
+  </div>
+  <div class="form-submit">
+    <input type="submit" name="Add Task!" value="Add Task!" />
+  </div>
+</div>
+
+</form>
+{# </div> #}

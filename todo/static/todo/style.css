@@ -1,0 +1,115 @@
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #6E91A1;
+  font-family: 'Karla', sans-serif;
+}
+
+#iPlay {
+  display: table;
+  margin: 0 auto;
+  vertical-align: middle;
+  text-align: center;
+  width: 75%;
+}
+
+h1 {
+  display: table-caption;
+  text-align: center;
+}
+
+.task-header {
+  width: 75%;
+  min-height: 25px;
+  margin: 0 auto;
+  background-color: #032536;
+  display: table-row;
+  color: white;
+}
+
+#task-description-hdr {
+  display: table-cell;
+  text-align: left;
+  padding-left: 5px;
+}
+
+#task-due-hdr {
+  display: table-cell;
+  text-align: left;
+}
+
+#task-complete-hdr{
+  display: table-cell;
+  text-align: right;
+  padding-right: 5px;
+}
+#table {
+  display: table;
+}
+
+.task-row {
+  width: 75%;
+  max-height: 80px;
+  background-color: orange;
+  display: table-row;
+}
+
+.task-row:nth-child(even) {
+  background-color: #D4806A;
+}
+.task-row:nth-child(odd) {
+  background-color: #FFBCAA;
+}
+
+.task-title {
+  text-align: left;
+  min-width: 20px;
+}
+
+.task-item {
+  display: table-cell;
+  text-align: left;
+}
+
+#task-description {
+  height: 100%;
+  width: 55%;
+  padding-left: 5px;
+}
+
+#task-due {
+  height: 100%;
+  width: 25%;
+  right: 0px;
+}
+
+#task-complete {
+  width: 20%;
+  left: 80%;
+  text-align: right;
+  padding-right: 5px;
+}
+
+#add-task-box {
+ width: 75%; 
+ margin: 0 auto; 
+ margin-top: 30px;
+ background-color: #D4B76a;
+}
+
+#add-task-box * {
+  margin-left: 5px;
+}
+
+h3 {
+  padding-top: 10px;
+  margin-bottom: 3px;
+}
+
+
+.form-submit {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 5px;
+}
+
